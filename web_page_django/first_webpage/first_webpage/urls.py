@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from first_webpage.views import saludo    # importo la vista de saludo
 from first_webpage.views import despedida
+from first_webpage.views import fecha
+from first_webpage.views import calcula_edad
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludo/', saludo),
-    path('despedida/', despedida)
+    path('despedida/', despedida),
+    path('fecha/', fecha),
+    path('edad/<int:edad>/<int:year>', calcula_edad)
 ]
